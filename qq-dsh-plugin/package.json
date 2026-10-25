@@ -1,0 +1,47 @@
+{
+  "name": "dsh-qq-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "QQ 智能助手：接入本机 NapCat/OneBot 11，用 DSH 的大模型+联网+识图能力在授权群聊/私聊自动回复，支持主动私聊、B 站刷视频、语音回复。",
+  "type": "module",
+  "main": "lib/index.dedf1d2e.js",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "build": "node build/build.mjs",
+    "test": "node test/core.test.cjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": ">=18",
+    "@deepseek-ai/dsh": ">=0.1.7-rc.1 <0.3.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "exports": {
+    ".": "./lib/index.dedf1d2e.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/index.dedf1d2e.js",
+    "lib/client.js",
+    "src",
+    "cordis.patch.yml",
+    "README.md"
+  ]
+}
